@@ -1,14 +1,21 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Explorers", "Explorers\Explorers.csproj", "{2A828141-9EF2-4A8A-8944-B2F2D1775CC9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Explorers.Test", "Explorers.Test\Explorers.Test.csproj", "{F1E03291-0C37-40F6-8AAF-9B471ADEEFA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowDotNetApi.Models", "WowDotNetApi.Models\WowDotNetApi.Models.csproj", "{E0A692B2-8984-47C9-9E4F-15C0C2E44C48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowDotNetApi.Core", "WowDotNetApi.Core\WowDotNetApi.Core.csproj", "{77191C70-8D48-4E03-82C3-51CFA126859E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowDotNetApi.Helpers", "WowDotNetApi.Helpers\WowDotNetApi.Helpers.csproj", "{21FBDD50-58A9-48FD-B618-E330E5BAED83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowDotNetApi.Common", "WowDotNetApi.Common\WowDotNetApi.Common.csproj", "{77C5149A-84D1-4362-8F5D-D69AB1D8B6DA}"
+EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = WowDotNetAPI.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -38,8 +45,51 @@ Global
 		{F1E03291-0C37-40F6-8AAF-9B471ADEEFA1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{F1E03291-0C37-40F6-8AAF-9B471ADEEFA1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F1E03291-0C37-40F6-8AAF-9B471ADEEFA1}.Release|x86.ActiveCfg = Release|Any CPU
+		{E0A692B2-8984-47C9-9E4F-15C0C2E44C48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0A692B2-8984-47C9-9E4F-15C0C2E44C48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0A692B2-8984-47C9-9E4F-15C0C2E44C48}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E0A692B2-8984-47C9-9E4F-15C0C2E44C48}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E0A692B2-8984-47C9-9E4F-15C0C2E44C48}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E0A692B2-8984-47C9-9E4F-15C0C2E44C48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0A692B2-8984-47C9-9E4F-15C0C2E44C48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0A692B2-8984-47C9-9E4F-15C0C2E44C48}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E0A692B2-8984-47C9-9E4F-15C0C2E44C48}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E0A692B2-8984-47C9-9E4F-15C0C2E44C48}.Release|x86.ActiveCfg = Release|Any CPU
+		{77191C70-8D48-4E03-82C3-51CFA126859E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77191C70-8D48-4E03-82C3-51CFA126859E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77191C70-8D48-4E03-82C3-51CFA126859E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{77191C70-8D48-4E03-82C3-51CFA126859E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{77191C70-8D48-4E03-82C3-51CFA126859E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{77191C70-8D48-4E03-82C3-51CFA126859E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77191C70-8D48-4E03-82C3-51CFA126859E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77191C70-8D48-4E03-82C3-51CFA126859E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{77191C70-8D48-4E03-82C3-51CFA126859E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{77191C70-8D48-4E03-82C3-51CFA126859E}.Release|x86.ActiveCfg = Release|Any CPU
+		{21FBDD50-58A9-48FD-B618-E330E5BAED83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21FBDD50-58A9-48FD-B618-E330E5BAED83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21FBDD50-58A9-48FD-B618-E330E5BAED83}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{21FBDD50-58A9-48FD-B618-E330E5BAED83}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{21FBDD50-58A9-48FD-B618-E330E5BAED83}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{21FBDD50-58A9-48FD-B618-E330E5BAED83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21FBDD50-58A9-48FD-B618-E330E5BAED83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21FBDD50-58A9-48FD-B618-E330E5BAED83}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{21FBDD50-58A9-48FD-B618-E330E5BAED83}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{21FBDD50-58A9-48FD-B618-E330E5BAED83}.Release|x86.ActiveCfg = Release|Any CPU
+		{77C5149A-84D1-4362-8F5D-D69AB1D8B6DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77C5149A-84D1-4362-8F5D-D69AB1D8B6DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77C5149A-84D1-4362-8F5D-D69AB1D8B6DA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{77C5149A-84D1-4362-8F5D-D69AB1D8B6DA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{77C5149A-84D1-4362-8F5D-D69AB1D8B6DA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{77C5149A-84D1-4362-8F5D-D69AB1D8B6DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77C5149A-84D1-4362-8F5D-D69AB1D8B6DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77C5149A-84D1-4362-8F5D-D69AB1D8B6DA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{77C5149A-84D1-4362-8F5D-D69AB1D8B6DA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{77C5149A-84D1-4362-8F5D-D69AB1D8B6DA}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = WowDotNetAPI.vsmdi
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E0A692B2-8984-47C9-9E4F-15C0C2E44C48}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WowDotNetApi.Models</RootNamespace>
+    <AssemblyName>WowDotNetApi.Models</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AchievementCategory.cs" />
+    <Compile Include="AchievementCriteria.cs" />
+    <Compile Include="AchievementData.cs" />
+    <Compile Include="AchievementInfo.cs" />
+    <Compile Include="AchievementList.cs" />
+    <Compile Include="AchievementReward.cs" />
+    <Compile Include="Achievements.cs" />
+    <Compile Include="Auction.cs" />
+    <Compile Include="AuctionFile.cs" />
+    <Compile Include="AuctionFiles.cs" />
+    <Compile Include="AuctionHouseSide.cs" />
+    <Compile Include="Auctions.cs" />
+    <Compile Include="BattlegroupData.cs" />
+    <Compile Include="BattlegroupInfo.cs" />
+    <Compile Include="Challenge.cs" />
+    <Compile Include="ChallengeGroup.cs" />
+    <Compile Include="ChallengeMap.cs" />
+    <Compile Include="ChallengeMember.cs" />
+    <Compile Include="ChallengeMemberCharacter.cs" />
+    <Compile Include="Challenges.cs" />
+    <Compile Include="ChallengeTime.cs" />
+    <Compile Include="Character.cs" />
+    <Compile Include="CharacterAppearance.cs" />
+    <Compile Include="CharacterArenaTeam.cs" />
+    <Compile Include="CharacterClassesData.cs" />
+    <Compile Include="CharacterClassInfo.cs" />
+    <Compile Include="CharacterEquipment.cs" />
+    <Compile Include="CharacterFeed.cs" />
+    <Compile Include="CharacterGuild.cs" />
+    <Compile Include="CharacterGuildEmblem.cs" />
+    <Compile Include="CharacterHunterPet.cs" />
+    <Compile Include="CharacterItem.cs" />
+    <Compile Include="CharacterMount.cs" />
+    <Compile Include="CharacterMounts.cs" />
+    <Compile Include="CharacterPet.cs" />
+    <Compile Include="CharacterPets.cs" />
+    <Compile Include="CharacterPetSlot.cs" />
+    <Compile Include="CharacterPetStats.cs" />
+    <Compile Include="CharacterProfession.cs" />
+    <Compile Include="CharacterProfessions.cs" />
+    <Compile Include="CharacterPVP.cs" />
+    <Compile Include="CharacterRaceInfo.cs" />
+    <Compile Include="CharacterRacesData.cs" />
+    <Compile Include="CharacterRatedBattleground.cs" />
+    <Compile Include="CharacterRatedBattlegrounds.cs" />
+    <Compile Include="CharacterReputation.cs" />
+    <Compile Include="CharacterStats.cs" />
+    <Compile Include="CharacterTalent.cs" />
+    <Compile Include="CharacterTalentGlyph.cs" />
+    <Compile Include="CharacterTalentGlyphs.cs" />
+    <Compile Include="CharacterTalentInfo.cs" />
+    <Compile Include="CharacterTalentSpec.cs" />
+    <Compile Include="CharacterTalentSpell.cs" />
+    <Compile Include="CharacterTitle.cs" />
+    <Compile Include="Guild.cs" />
+    <Compile Include="GuildCharacter.cs" />
+    <Compile Include="GuildCharacterSpec.cs" />
+    <Compile Include="GuildEmblem.cs" />
+    <Compile Include="GuildMember.cs" />
+    <Compile Include="GuildNews.cs" />
+    <Compile Include="GuildPerkInfo.cs" />
+    <Compile Include="GuildPerksData.cs" />
+    <Compile Include="GuildPerkSpellInfo.cs" />
+    <Compile Include="GuildRewardAchievementInfo.cs" />
+    <Compile Include="GuildRewardInfo.cs" />
+    <Compile Include="GuildRewardItemInfo.cs" />
+    <Compile Include="GuildRewardsData.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="ItemBonusStat.cs" />
+    <Compile Include="ItemClassData.cs" />
+    <Compile Include="ItemClassInfo.cs" />
+    <Compile Include="ItemGemBonusInfo.cs" />
+    <Compile Include="ItemGemInfo.cs" />
+    <Compile Include="ItemGemType.cs" />
+    <Compile Include="ItemSocket.cs" />
+    <Compile Include="ItemSocketInfo.cs" />
+    <Compile Include="ItemSourceInfo.cs" />
+    <Compile Include="ItemSpell.cs" />
+    <Compile Include="ItemSpellInfo.cs" />
+    <Compile Include="ItemStat.cs" />
+    <Compile Include="ItemTooltipParameters.cs" />
+    <Compile Include="ItemUpgrade.cs" />
+    <Compile Include="ItemWeaponDamage.cs" />
+    <Compile Include="ItemWeaponInfo.cs" />
+    <Compile Include="Progression.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Raid.cs" />
+    <Compile Include="RaidBoss.cs" />
+    <Compile Include="Realm.cs" />
+    <Compile Include="RealmsData.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
