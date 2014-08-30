@@ -2,12 +2,13 @@ WowDotNetAPI
 =========
 
 WowDotNetAPI is a C# .Net library for the World of Warcraft Community Platform API
+
 WowDotNetAPI now use await/async features from .NET 4.5 with HttpClient (use WowDotNetAPI.Core for async functionalities), Enjoy !
 
 As of 8/24 you'll need a Mashery API key to use this api library/wrapper. For more info please see
 [https://dev.battle.net/docs/read/community_apis/migration](https://dev.battle.net/docs/read/community_apis/migration)
 
-TODO: Convert unit tests from old solution to new one.
+
 TODO: Implement new api.
 
 

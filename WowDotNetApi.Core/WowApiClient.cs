@@ -15,7 +15,6 @@ namespace WowDotNetApi.Core
         private HttpClient _httpClient;
 
         private readonly Region _region;
-        private readonly Locale _locale;
         private readonly string _apiKey;
         private string _host;
 
@@ -31,30 +30,31 @@ namespace WowDotNetApi.Core
                 _host = value;
             }
         }
+        public Locale Locale { get; set; }
 
         public WowApiClient(Region region, Locale locale, string apiKey)
         {
             _region = region;
-            _locale = locale;
+            Locale = locale;
             _apiKey = apiKey;
 
-            switch (_region)
+            Host = GetRegion(region);
+        }
+
+        public static string GetRegion(Region region)
+        {
+            switch (region)
             {
                 case Region.EU:
-                    Host = "https://eu.api.battle.net";
-                    break;
+                    return "https://eu.api.battle.net";
                 case Region.KR:
-                    Host = "https://kr.api.battle.net";
-                    break;
+                    return "https://kr.api.battle.net";
                 case Region.TW:
-                    Host = "https://tw.api.battle.net";
-                    break;
+                    return "https://tw.api.battle.net";
                 case Region.CN:
-                    Host = "https://www.battlenet.com.cn";
-                    break;
+                    return "https://www.battlenet.com.cn";
                 default:
-                    Host = "https://us.api.battle.net";
-                    break;
+                    return "https://us.api.battle.net";
             }
         }
 
@@ -77,7 +77,7 @@ namespace WowDotNetApi.Core
 
         public async Task<Character> GetCharacterAsync(Region region, string realm, string name, CharacterOptions characterOptions)
         {
-            return await GetAsync<Character>(string.Format(@"{0}/wow/character/{1}/{2}?locale={3}{4}&apikey={5}", Host, realm, name, _locale,
+            return await GetAsync<Character>(string.Format(@"{0}/wow/character/{1}/{2}?locale={3}{4}&apikey={5}", Host, realm, name, Locale,
                     CharacterHelper.BuildOptionalQuery(characterOptions), _apiKey));
         }
 
@@ -103,7 +103,7 @@ namespace WowDotNetApi.Core
         public async Task<Guild> GetGuildAsync(Region region, string realm, string name, GuildOptions realmOptions)
         {
             return await GetAsync<Guild>(
-                string.Format(@"{0}/wow/guild/{1}/{2}?locale={3}{4}&apikey={5}", Host, realm, name, _locale,
+                string.Format(@"{0}/wow/guild/{1}/{2}?locale={3}{4}&apikey={5}", Host, realm, name, Locale,
                     GuildHelper.BuildOptionalQuery(realmOptions), _apiKey));
         }
 
@@ -113,7 +113,7 @@ namespace WowDotNetApi.Core
         public async Task<IEnumerable<Realm>> GetRealmsStatusAsync()
         {
             var realmsData = await GetAsync<RealmsData>(
-                string.Format(@"{0}/wow/realm/status?locale={1}&apikey={2}", Host, _locale, _apiKey));
+                string.Format(@"{0}/wow/realm/status?locale={1}&apikey={2}", Host, Locale, _apiKey));
 
             return (realmsData != null) ? realmsData.Realms : null;
         }
@@ -126,7 +126,7 @@ namespace WowDotNetApi.Core
         {
             var auctionFiles = await GetAsync<AuctionFiles>(
                 string.Format(@"{0}/wow/auction/data/{1}?locale={2}&apikey={3}", Host, realm.ToLower().Replace(' ', '-'),
-                    _locale, _apiKey));
+                    Locale, _apiKey));
 
             if (auctionFiles == null)
                 return null;
@@ -141,7 +141,7 @@ namespace WowDotNetApi.Core
         public async Task<Item> GetItemAsync(int id)
         {
             return await GetAsync<Item>(
-                string.Format(@"{0}/wow/item/{1}?locale={2}&apikey={3}", Host, id, _locale, _apiKey));
+                string.Format(@"{0}/wow/item/{1}?locale={2}&apikey={3}", Host, id, Locale, _apiKey));
         }
 
         public async Task<Item> GetItemSetAsync(int id)
@@ -152,7 +152,7 @@ namespace WowDotNetApi.Core
         public async Task<IEnumerable<ItemClassInfo>> GetItemClassesAsync()
         {
             var itemclassdata = await GetAsync<ItemClassData>(
-                string.Format(@"{0}/wow/data/item/classes?locale={1}&apikey={2}", Host, _locale, _apiKey));
+                string.Format(@"{0}/wow/data/item/classes?locale={1}&apikey={2}", Host, Locale, _apiKey));
 
             return (itemclassdata != null) ? itemclassdata.Classes : null;
         }
@@ -164,7 +164,7 @@ namespace WowDotNetApi.Core
         public async Task<IEnumerable<CharacterRaceInfo>> GetCharacterRacesAsync()
         {
             var charRacesData = await GetAsync<CharacterRacesData>(
-                string.Format(@"{0}/wow/data/character/races?locale={1}&apikey={2}", Host, _locale, _apiKey));
+                string.Format(@"{0}/wow/data/character/races?locale={1}&apikey={2}", Host, Locale, _apiKey));
 
             return (charRacesData != null) ? charRacesData.Races : null;
         }
@@ -176,7 +176,7 @@ namespace WowDotNetApi.Core
         public async Task<IEnumerable<CharacterClassInfo>> GetCharacterClassesAsync()
         {
             var characterClasses = await GetAsync<CharacterClassesData>(
-                string.Format(@"{0}/wow/data/character/classes?locale={1}&apikey={2}", Host, _locale, _apiKey));
+                string.Format(@"{0}/wow/data/character/classes?locale={1}&apikey={2}", Host, Locale, _apiKey));
 
             return (characterClasses != null) ? characterClasses.Classes : null;
         }
@@ -188,7 +188,7 @@ namespace WowDotNetApi.Core
         public async Task<IEnumerable<GuildRewardInfo>> GetGuildRewardsAsync()
         {
             var guildRewardsData = await GetAsync<GuildRewardsData>(
-                string.Format(@"{0}/wow/data/guild/rewards?locale={1}&apikey={2}", Host, _locale, _apiKey));
+                string.Format(@"{0}/wow/data/guild/rewards?locale={1}&apikey={2}", Host, Locale, _apiKey));
 
             return (guildRewardsData != null) ? guildRewardsData.Rewards : null;
         }
@@ -200,7 +200,7 @@ namespace WowDotNetApi.Core
         public async Task<IEnumerable<GuildPerkInfo>> GetGuildPerksAsync()
         {
             var guildPerksData = await GetAsync<GuildPerksData>(
-                 string.Format(@"{0}/wow/data/guild/perks?locale={1}&apikey={2}", Host, _locale, _apiKey));
+                 string.Format(@"{0}/wow/data/guild/perks?locale={1}&apikey={2}", Host, Locale, _apiKey));
 
             return (guildPerksData != null) ? guildPerksData.Perks : null;
         }
@@ -212,13 +212,13 @@ namespace WowDotNetApi.Core
         public async Task<AchievementInfo> GetAchievementAsync(int id)
         {
             return await GetAsync<AchievementInfo>(
-                string.Format(@"{0}/wow/achievement/{1}?locale={2}&apikey={3}", Host, id, _locale, _apiKey));
+                string.Format(@"{0}/wow/achievement/{1}?locale={2}&apikey={3}", Host, id, Locale, _apiKey));
         }
 
         public async Task<IEnumerable<AchievementList>> GetAchievementsAsync()
         {
             var achievementData = await GetAsync<AchievementData>(
-                string.Format(@"{0}/wow/data/character/achievements?locale={1}&apikey={2}", Host, _locale, _apiKey));
+                string.Format(@"{0}/wow/data/character/achievements?locale={1}&apikey={2}", Host, Locale, _apiKey));
 
             return (achievementData != null) ? achievementData.Lists : null;
         }
@@ -228,7 +228,7 @@ namespace WowDotNetApi.Core
             var achievementData =
                 await
                     GetAsync<AchievementData>(
-                        string.Format(@"{0}/wow/data/guild/achievements?locale={1}&apikey={2}", Host, _locale, _apiKey));
+                        string.Format(@"{0}/wow/data/guild/achievements?locale={1}&apikey={2}", Host, Locale, _apiKey));
 
             return (achievementData != null) ? achievementData.Lists : null;
         }
@@ -242,7 +242,7 @@ namespace WowDotNetApi.Core
             var battlegroupData =
                 await
                     GetAsync<BattlegroupData>(
-                        string.Format(@"{0}/wow/data/battlegroups?locale={1}&apikey={2}", Host, _locale, _apiKey));
+                        string.Format(@"{0}/wow/data/battlegroups/?locale={1}&apikey={2}", Host, Locale, _apiKey));
 
             return (battlegroupData != null) ? battlegroupData.Battlegroups : null;
         }
@@ -256,7 +256,7 @@ namespace WowDotNetApi.Core
             return
                 await
                     GetAsync<Challenges>(string.Format(
-                        @"{0}/wow/challenge/{1}?locale={2}&apikey={3}", Host, realm, _locale, _apiKey));
+                        @"{0}/wow/challenge/{1}?locale={2}&apikey={3}", Host, realm, Locale, _apiKey));
         }
 
         public async Task<Challenges> GetChallengeRegionAsync()

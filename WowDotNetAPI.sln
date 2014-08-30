@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowDotNetApi.Helpers", "Wow
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowDotNetApi.Common", "WowDotNetApi.Common\WowDotNetApi.Common.csproj", "{77C5149A-84D1-4362-8F5D-D69AB1D8B6DA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NET4", "NET4", "{63274C57-EF93-45CD-B3CC-B4F683230703}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowDotNetApi.Tests", "WowDotNetApi.Tests\WowDotNetApi.Tests.csproj", "{E4D53749-19A7-43BE-9473-4679CCF96005}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,9 +89,23 @@ Global
 		{77C5149A-84D1-4362-8F5D-D69AB1D8B6DA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{77C5149A-84D1-4362-8F5D-D69AB1D8B6DA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{77C5149A-84D1-4362-8F5D-D69AB1D8B6DA}.Release|x86.ActiveCfg = Release|Any CPU
+		{E4D53749-19A7-43BE-9473-4679CCF96005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4D53749-19A7-43BE-9473-4679CCF96005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4D53749-19A7-43BE-9473-4679CCF96005}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E4D53749-19A7-43BE-9473-4679CCF96005}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E4D53749-19A7-43BE-9473-4679CCF96005}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E4D53749-19A7-43BE-9473-4679CCF96005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4D53749-19A7-43BE-9473-4679CCF96005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4D53749-19A7-43BE-9473-4679CCF96005}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E4D53749-19A7-43BE-9473-4679CCF96005}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E4D53749-19A7-43BE-9473-4679CCF96005}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2A828141-9EF2-4A8A-8944-B2F2D1775CC9} = {63274C57-EF93-45CD-B3CC-B4F683230703}
+		{F1E03291-0C37-40F6-8AAF-9B471ADEEFA1} = {63274C57-EF93-45CD-B3CC-B4F683230703}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = WowDotNetAPI.vsmdi
