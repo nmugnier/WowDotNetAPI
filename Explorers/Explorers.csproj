@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\CharacterOptions.cs" />
+    <Compile Include="Enums\GuildOptions.cs" />
+    <Compile Include="Enums\Locale.cs" />
     <Compile Include="Models\Challenge.cs" />
     <Compile Include="Models\ChallengeGroup.cs" />
     <Compile Include="Models\ChallengeMap.cs" />
@@ -116,6 +119,7 @@
     <Compile Include="Models\ItemUpgrade.cs" />
     <Compile Include="Models\ItemWeaponDamage.cs" />
     <Compile Include="Models\ItemWeaponInfo.cs" />
+    <Compile Include="Enums\Region.cs" />
     <Compile Include="Utilities\JsonUtility.cs" />
     <Compile Include="WowExplorer.cs" />
     <Compile Include="Models\Character.cs" />

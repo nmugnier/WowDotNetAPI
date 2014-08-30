@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace WowDotNetAPI.Utilities
 {
     public static class GuildUtility
     {
-        public static string buildOptionalQuery(GuildOptions realmOptions)
+        public static string BuildOptionalQuery(GuildOptions realmOptions)
         {
-            string query = "&fields=";
-            List<string> tmp = new List<string>();
+            var query = "&fields=";
+            var tmp = new List<string>();
 
             if ((realmOptions & GuildOptions.GetMembers) == GuildOptions.GetMembers)
                 tmp.Add("members");
@@ -21,10 +18,10 @@ namespace WowDotNetAPI.Utilities
             if ((realmOptions & GuildOptions.GetNews) == GuildOptions.GetNews)
                 tmp.Add("news");
 
-            if (tmp.Count == 0) return string.Empty;
+            if (tmp.Count == 0) 
+                return string.Empty;
 
             query += string.Join(",", tmp.ToArray());
-
             return query;
         }
 
